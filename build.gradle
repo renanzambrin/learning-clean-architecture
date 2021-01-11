@@ -1,0 +1,59 @@
+plugins {
+    id "java"
+    id "idea"
+    id "io.quarkus" version "${quarkusVersion}"
+    id "org.sonarqube" version "${sonarqubePluginVersion}"
+    id "jacoco"
+}
+
+group "renanzambrin.learning"
+version "1.0-SNAPSHOT"
+description "Clean Architecture example project"
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+configurations {
+    // ### Test
+    testAnnotationProcessor.extendsFrom annotationProcessor
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    //### Quarkus ###
+    implementation enforcedPlatform("io.quarkus:quarkus-universe-bom:${quarkusVersion}")
+    implementation "io.quarkus:quarkus-config-yaml"
+
+    compile "org.projectlombok:lombok:${lombokVersion}"
+    annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+
+    testImplementation 'io.quarkus:quarkus-junit5'
+    testImplementation 'io.quarkus:quarkus-junit5-mockito'
+}
+
+test {
+    useJUnitPlatform()
+    finalizedBy jacocoTestReport
+}
+
+jacocoTestReport {
+    dependsOn test
+
+    reports {
+        xml.enabled = true
+        html.enabled = true
+    }
+}
+
+sonarqube {
+    properties {
+        property "sonar.projectKey", "renanzambrin_learning-clean-architecture"
+        property "sonar.organization", "renanzambrin"
+        property "sonar.host.url", "https://sonarcloud.io"
+    }
+}

@@ -1,0 +1,17 @@
+## IntelliJ IDEA
+*.iml
+/.idea/*.xml
+/.idea/codeStyles
+/.idea/dictionaries
+/.idea/modules
+/.idea/httpRequests
+/.idea/sonarlint
+!/.idea/runConfigurations/
+
+## Gradle
+/.gradle/
+
+## Build Folders
+/build/
+/out/
+/target/
