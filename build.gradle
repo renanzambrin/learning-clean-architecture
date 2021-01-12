@@ -28,6 +28,7 @@ dependencies {
     //### Quarkus ###
     implementation enforcedPlatform("io.quarkus:quarkus-universe-bom:${quarkusVersion}")
     implementation "io.quarkus:quarkus-config-yaml"
+    implementation "io.quarkus:quarkus-resteasy-jackson"
     implementation "io.quarkus:quarkus-mongodb-client"
 
     compile "org.projectlombok:lombok:${lombokVersion}"
@@ -35,6 +36,7 @@ dependencies {
 
     testImplementation "io.quarkus:quarkus-junit5"
     testImplementation "io.quarkus:quarkus-junit5-mockito"
+    testImplementation "io.rest-assured:rest-assured"
 }
 
 test {
