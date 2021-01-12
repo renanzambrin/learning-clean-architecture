@@ -1,4 +1,4 @@
-package learning.product.exception;
+package learning.domain.product.exception;
 
 @SuppressWarnings("CdiInjectionPointsInspection")
 public class InvalidPriceException extends IllegalArgumentException {

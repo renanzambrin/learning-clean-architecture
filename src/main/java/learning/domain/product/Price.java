@@ -1,9 +1,9 @@
-package learning.product;
+package learning.domain.product;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Objects;
-import learning.product.exception.InvalidPriceException;
+import learning.domain.product.exception.InvalidPriceException;
 import lombok.Getter;
 
 @SuppressWarnings("CdiInjectionPointsInspection")

@@ -28,12 +28,13 @@ dependencies {
     //### Quarkus ###
     implementation enforcedPlatform("io.quarkus:quarkus-universe-bom:${quarkusVersion}")
     implementation "io.quarkus:quarkus-config-yaml"
+    implementation "io.quarkus:quarkus-mongodb-client"
 
     compile "org.projectlombok:lombok:${lombokVersion}"
     annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
 
-    testImplementation 'io.quarkus:quarkus-junit5'
-    testImplementation 'io.quarkus:quarkus-junit5-mockito'
+    testImplementation "io.quarkus:quarkus-junit5"
+    testImplementation "io.quarkus:quarkus-junit5-mockito"
 }
 
 test {

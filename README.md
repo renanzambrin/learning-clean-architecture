@@ -9,6 +9,10 @@ Learning Clean Architecture is an example project to help in the learning of cle
 
 ## Usage
 
+run the MongoDB docker-compose located at ./src/test/docker/mongodb/docker-compose.yml navigating to the directory and
+executing
+`docker-compose up`
+
 run the project in dev mode by executing
 
 `gradlew quarkusDev`
